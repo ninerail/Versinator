@@ -1,5 +1,6 @@
 <!doctype html>
 <html ng-app="myApp">
+<html lang='en'>
 
 <head>
   <meta charset="utf-8">
@@ -7,10 +8,22 @@
   <!-- styles -->
   <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.6/yeti/bootstrap.min.css" rel="stylesheet">
 </head>
-
+<body ng-controller="getOurData as ctrl">
   <div class="container">
-    <div ng-view></div>
+    <div ng-view>
+    </div>
   </div>
+
+  <h1>The Versinator</h1>
+  <h2>How well do you know your Bible?</h2>
+   <p>Find a verse</p>
+        <form ng-submit="ctrl.getData(input)">
+          <input type="text" id="book" name="book" placeholder="book">
+          <input type="text" id="chapter" name="chapter" placeholder="chapter">
+          <input type="text" id="verse" name="verse" placeholder="verse">
+          <button class="btn btn-default" ng-click="ctrl.getData()" id="searchButton">SEARCH</button>
+        </form>
+
 
   <!-- scripts -->
   <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
@@ -20,7 +33,5 @@
   <script src="./main.js"></script>
   <script src="./services.js"></script>
   <script src="./controllers.js"></script>
-
-
 </body>
 </html>

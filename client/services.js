@@ -22,13 +22,16 @@ angular.module('myApp').factory('AuthService',
 			  .success(function (data) {
 			  	if(data.status) {
 			  		user = true;
+			  		console.log('get user status ' + user);
 			  	} else {
 			  		user = false;
+			  		console.log('get user status ' + user);
 			  	}
 			  })
 			  //handle error
 			  .error(function (data) {
 			  	user = false;
+			  	console.log('get user status error');
 			  });
 			},
 
